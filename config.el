@@ -75,3 +75,20 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(setq doom-theme 'catppuccin)
+(setq catppuccin-flavor 'mocha)
+(load-theme 'catppuccin t t)
+(catppuccin-set-color 'crust "#000000")
+(catppuccin-set-color 'mantle "#0b0b0b")
+(catppuccin-set-color 'base "#161616")
+(catppuccin-set-color 'surface0 "#262626")
+(catppuccin-set-color 'surface1 "#393939")
+(catppuccin-set-color 'surface2 "#525252")
+(catppuccin-set-color 'overlay0 "#6f6f6f")
+(catppuccin-set-color 'overlay1 "#8d8d8d")
+(catppuccin-set-color 'overlay2 "#a8a8a8")
+(catppuccin-set-color 'subtext0 "#c6c6c6")
+(catppuccin-set-color 'subtext1 "#e0e0e0")
+(catppuccin-set-color 'text "#f4f4f4")
+(catppuccin-reload)
