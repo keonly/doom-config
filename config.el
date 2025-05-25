@@ -22,9 +22,19 @@
 ;; accept. For example:
 ;;
 (setq doom-font (font-spec :family "Iosevka Nerd Font Mono" :size 16 :weight 'regular)
-     doom-variable-pitch-font (font-spec :family "Noto Sans" :size 14)
+     doom-variable-pitch-font (font-spec :family "Noto Sans CJK KR" :size 14)
      doom-symbol-font (font-spec :family "Iosevka Nerd Font Mono" :size 16 :weight 'regular))
-(set-fontset-font t 'hangul (font-spec :family "Noto Sans CJK KR") nil 'prepend)
+(after! doom-init-fonts ; run *after* Doom has done all its font work
+  ;; 1) Tell Emacs to use Noto for every Hangul code-point
+  (set-fontset-font t 'hangul
+                    (font-spec :family "Noto Sans CJK KR" :size 14)
+                    nil 'prepend)
+
+  ;; 2) And also for the “han” script (some builds tag Hangul that way)
+  (set-fontset-font t 'han
+                    (font-spec :family "Noto Sans CJK KR" :size 14)
+                    nil 'prepend))
+
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -91,3 +101,13 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(after! doom-modeline
+  (setq doom-modeline-modal-icon nil
+        doom-modeline-modal-modern-icon nil))
+(setq evil-normal-state-tag   " NORMAL "
+      evil-insert-state-tag   " INSERT "
+      evil-visual-state-tag   " VISUAL "
+      evil-replace-state-tag  " REPLACE "
+      evil-motion-state-tag   " MOTION "
+      evil-operator-state-tag " OPERATOR ")
