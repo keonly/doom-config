@@ -99,9 +99,9 @@
 (after! doom-modeline
   (setq doom-modeline-modal-icon nil
         doom-modeline-modal-modern-icon nil))
-(setq evil-normal-state-tag   " NORMAL "
-      evil-insert-state-tag   " INSERT "
-      evil-visual-state-tag   " VISUAL "
-      evil-replace-state-tag  " REPLACE "
-      evil-motion-state-tag   " MOTION "
-      evil-operator-state-tag " OPERATOR ")
+(setq evil-normal-state-tag   "NORMAL"
+      evil-insert-state-tag   "INSERT"
+      evil-visual-state-tag   "VISUAL"
+      evil-replace-state-tag  "REPLACE"
+      evil-motion-state-tag   "MOTION"
+      evil-operator-state-tag "OPERATOR")
