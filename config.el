@@ -116,7 +116,8 @@
       evil-motion-state-tag   "MOTION"
       evil-operator-state-tag "OPERATOR")
 
-;; LSP config
-(after! lsp-mode
-  ;; Make YAML LSP use the binary provided by Nix:
-  (setq lsp-yaml-server-command '("yaml-language-server" "--stdio")))
+
+;; Load shell environment variables (like PATH) into Emacs when in a GUI
+(when (memq window-system '(mac ns x pgtk)) ; macOS, X11, or Wayland (PGTK)
+  (setq exec-path-from-shell-arguments '("-l")) ; Use login shell for full env
+  (exec-path-from-shell-initialize))
