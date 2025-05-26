@@ -115,3 +115,8 @@
       evil-replace-state-tag  "REPLACE"
       evil-motion-state-tag   "MOTION"
       evil-operator-state-tag "OPERATOR")
+
+;; LSP config
+(after! lsp-mode
+  ;; Make YAML LSP use the binary provided by Nix:
+  (setq lsp-yaml-server-command '("yaml-language-server" "--stdio")))
