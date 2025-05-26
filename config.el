@@ -21,19 +21,12 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
+(set-language-environment "Korean")
+(prefer-coding-system 'utf-8)
+
 (setq doom-font (font-spec :family "Sarasa Mono K" :size 16 :weight 'regular)
      doom-variable-pitch-font (font-spec :family "Sarasa Mono K" :size 16)
      doom-symbol-font (font-spec :family "Iosevka Nerd Font Mono" :size 16 :weight 'regular))
-(after! doom-init-fonts ; run *after* Doom has done all its font work
-  ;; 1) Tell Emacs to use Noto for every Hangul code-point
-  (set-fontset-font t 'hangul
-                    (font-spec :family "Sarasa Mono K" :size 14)
-                    nil 'prepend)
-
-  ;; 2) And also for the “han” script (some builds tag Hangul that way)
-  (set-fontset-font t 'han
-                    (font-spec :family "Sarasa Mono K" :size 14)
-                    nil 'prepend))
 
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
