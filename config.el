@@ -27,8 +27,18 @@
 (setq doom-font (font-spec :family "Sarasa Mono K" :size 16 :weight 'regular)
      doom-variable-pitch-font (font-spec :family "Sarasa Mono K" :size 16)
      doom-symbol-font (font-spec :family "Iosevka Nerd Font Mono" :size 16 :weight 'regular))
-(after! doom
-  (set-fontset-font t 'hangul "Sarasa Mono K" nil 'prepend))
+
+(defun custom/apply-sarasa-to-hangul (&optional frame)
+  (when (display-graphic-p frame)           ; skip TTY frames
+    (with-selected-frame (or frame (selected-frame))
+      (set-fontset-font nil 'hangul
+                        (font-spec :family "Sarasa Mono K") ; explicit spec
+                        nil 'prepend))))
+
+;; first frame (after Doom has drawn it)
+(add-hook! 'doom-init-ui-hook #'custom/apply-sarasa-to-hangul)
+;; any frames you create later (daemon, pop-ups, etc.)
+(add-hook! 'after-make-frame-functions #'custom/apply-sarasa-to-hangul)
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
