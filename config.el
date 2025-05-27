@@ -115,3 +115,5 @@
       evil-replace-state-tag  "REPLACE"
       evil-motion-state-tag   "MOTION"
       evil-operator-state-tag "OPERATOR")
+
+(setq dirvish-hide-cursor nil)
