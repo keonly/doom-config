@@ -119,5 +119,6 @@
 (setq insert-directory-program
       (or (executable-find "uutils-ls")
           (executable-find "ls")))
-(setq dired-use-ls-dired t
-      dired-listing-switches "-alh --group-directories-first")
+(after! dired
+  (setq dired-use-ls-dired t
+        dired-listing-switches "-alh --group-directories-first"))
