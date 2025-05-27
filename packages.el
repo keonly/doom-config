@@ -51,4 +51,5 @@
 (package! catppuccin-theme)
 (package! eee
   :recipe (:host github :repo "eval-exec/eee.el"
-           :files (:defaults "*.el" "*.sh")))
+           :files (:defaults "*.el" "*.sh"))
+  :pin "b136e5a9eab465b7a86fbc44dee64b21ec35471e")
