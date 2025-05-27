@@ -117,7 +117,8 @@
       evil-operator-state-tag "OPERATOR")
 
 
-;; Load shell environment variables (like PATH) into Emacs when in a GUI
+;; Load shell environment variables into Emacs
 (when (memq window-system '(mac ns x pgtk)) ; macOS, X11, or Wayland (PGTK)
-  (setq exec-path-from-shell-arguments '("-l")) ; Use login shell for full env
+  (exec-path-from-shell-initialize))
+(when (daemonp) ; launched as a daemon
   (exec-path-from-shell-initialize))
