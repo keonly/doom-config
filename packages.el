@@ -49,3 +49,4 @@
 ;; (unpin! t)
 
 (package! catppuccin-theme)
+(package! eat)

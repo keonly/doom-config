@@ -115,3 +115,7 @@
       evil-replace-state-tag  "REPLACE"
       evil-motion-state-tag   "MOTION"
       evil-operator-state-tag "OPERATOR")
+
+;; use `eat` for +term/toggle & +term/here
+(after! term
+  (setq +term-default-term 'eat))
