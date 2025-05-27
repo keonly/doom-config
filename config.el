@@ -116,7 +116,7 @@
       evil-motion-state-tag   "MOTION"
       evil-operator-state-tag "OPERATOR")
 
-(after! dirvish
-  (setq insert-directory-program "eza"
-        dired-listing-switches "-la --group-directories-first"
-        dirvish-hide-cursor true))
+(require 'ls-lisp)
+(setq ls-lisp-use-insert-directory-program nil
+      ls-lisp-dirs-first t
+      dired-listing-switches "-lah")
