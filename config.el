@@ -116,7 +116,8 @@
       evil-motion-state-tag   "MOTION"
       evil-operator-state-tag "OPERATOR")
 
-(require 'ls-lisp)
-(setq ls-lisp-use-insert-directory-program nil
-      ls-lisp-dirs-first t
-      dired-listing-switches "-lah")
+;; use GNU ls instead of BSD
+(setq insert-directory-program "gls"
+      dired-use-ls-dired t
+      ;; -a = all, -l = long, -h = human-readable sizes, --group-directories-first
+      dired-listing-switches "-alh --group-directories-first")
