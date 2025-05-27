@@ -116,8 +116,5 @@
       evil-motion-state-tag   "MOTION"
       evil-operator-state-tag "OPERATOR")
 
-;; use GNU ls instead of BSD
-(setq insert-directory-program "gls"
-      dired-use-ls-dired t
-      ;; -a = all, -l = long, -h = human-readable sizes, --group-directories-first
+(setq dired-use-ls-dired t
       dired-listing-switches "-alh --group-directories-first")
