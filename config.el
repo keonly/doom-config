@@ -116,4 +116,7 @@
       evil-motion-state-tag   "MOTION"
       evil-operator-state-tag "OPERATOR")
 
-(setq dirvish-hide-cursor nil)
+(after! dirvish
+  (setq insert-directory-program "eza"
+        dired-listing-switches "-la --group-directories-first"
+        dirvish-hide-cursor true))
